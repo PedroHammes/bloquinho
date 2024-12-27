@@ -1,0 +1,12 @@
+{
+  "name": "06-bloquinho",
+  "version": "1.0.0",
+  "main": "./src/server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch ./src/server.js"
+  },
+  "author": "Pedro Hammes",
+  "license": "ISC",
+  "description": "Aplicativo de bloco de notas"
+}
