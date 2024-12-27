@@ -6,10 +6,10 @@ import { routeHandler } from "./middlewares/routeHandler.js"
 // A função espera receber uma requisição
 async function listener(request, response) {
     // A requisição será interceptada pelos middlewares
-    //  depois de passar por eles alguma função será (ou não) executada
+    //  depois de passar por eles algum controller será (ou não) executado
 
     // Este middleware trata o body da request, para podermos identificar
-    //  quais informações o usuário deseja
+    //  com quais informações o usuário deseja trabalhar
     await jsonHandler({ request, response })
 
     // Este middleware identifica a rota que o usuário deseja acessar
