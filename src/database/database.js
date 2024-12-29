@@ -22,6 +22,7 @@ export class Database {
         .catch(
             this.#persist()
         )
+
     }
 
 
@@ -30,5 +31,27 @@ export class Database {
         // Endereço do DB (param 1),
         // como conteúdo inicial recebe os dados em memória convertidos em string (param 2)
         fs.writeFile(DATABASE_PATH, JSON.stringify(this.#database))
+
     }
+
+    // Função para inserir dados nas tabelas
+    insert(table, data) {
+        // Verifica se a tabela existe na coleção
+        if (Array.isArray(this.#database[table])) {
+            // Se existe adiciona os dados
+            this.#database[table].push(data)
+
+        } else {
+            // Se não existe:
+            //  significa que este é o primeiro registro de uma nova tabela,
+            //  então use o operador de atribuição e passe os dados (objeto)
+            //  como parte de um array
+            this.#database[table] = [data]
+
+        }
+
+        this.#persist()
+
+    }
+
 }

@@ -1,1 +1,12 @@
-{}
+{
+    "notes": [
+        {
+            "id": "a2cbeae7-4f88-4afe-bcdf-58739746faeb",
+            "title": "Minha primeira nota",
+            "content": "nada interessante",
+            "user_name": "Pedro",
+            "created_at": "2024-12-29T11:24:55.063Z",
+            "updated_at": "2024-12-29T11:24:55.063Z"
+        }
+    ]
+}
