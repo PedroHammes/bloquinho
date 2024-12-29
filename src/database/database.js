@@ -8,7 +8,7 @@ export class Database {
     #database = {}
 
     constructor() {
-        // Tenta encontrar um arquivo no formato (param 2) no endereço (param 1)
+        // Tenta encontrar um arquivo no endereço (param 1) e no formato (param 2)
         fs.readFile(DATABASE_PATH, "utf8")
 
         // Se conseguir, signifca que o db já existe.
@@ -18,14 +18,14 @@ export class Database {
         .then( (data) => {
             this.#database = JSON.parse(data)
         })
-        // Se não conseguir, cria o DB
+        // Se não conseguir, cria o DB passando para o arquivo os dados em memória (nada)
         .catch(
             this.#persist()
         )
     }
 
 
-    // Método responsável por criar o arquivo do DB
+    // Método responsável por escrever no arquivo do DB os dados em memória
     #persist() {
         // Endereço do DB (param 1),
         // como conteúdo inicial recebe os dados em memória convertidos em string (param 2)

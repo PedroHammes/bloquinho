@@ -11,7 +11,7 @@ export function create({ request, response }) {
         user_name,
         created_at: new Date(),
         updated_at: new Date()
-
+        
     }
 
     return response.end("Criado com sucesso!")

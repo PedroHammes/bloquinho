@@ -1,6 +1,10 @@
 import { routes } from "../routes/index.js"
 import { Database } from "../database/database.js"
 
+// Cria uma instância do banco de dados
+// Esta instância será passada para o controller que for chamado.
+// A criação da instância fica fora do midlleware para que todas as rotas
+//  tenham acesso à mesma instância do DB.
 const database = new Database()
 
 export function routeHandler({ request, response }) {
